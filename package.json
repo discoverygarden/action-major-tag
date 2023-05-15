@@ -1,0 +1,21 @@
+{
+  "name": "action-major-tag",
+  "version": "1.0.0",
+  "description": "Action to tag an action with a major tag.",
+  "main": "index.js",
+  "scripts": {
+    "package": "ncc build index.js -o dist",
+    "test": "eslint index.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^4.0.0",
+    "semver": "^6.3.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.25.1",
+    "eslint": "^7.14.0"
+  },
+  "author": "discoverygarden",
+  "license": "ISC"
+}
