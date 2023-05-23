@@ -1,0 +1,14 @@
+---
+name: Action Major Tag
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  new-major-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Action Major Tagger
+        uses: discoverygarden/action-major-tag@main
+        with:
+          prefix: v
