@@ -12,3 +12,5 @@ jobs:
     steps:
       - name: Run Semantic Version tagging action
         uses: discoverygarden/auto-semver@v1
+      - name: Update Major Tag
+        uses: discoverygarden/action-major-tag@main
