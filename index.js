@@ -50,7 +50,7 @@ async function checkIfTagExists(major_tag) {
 
 async function run() {
   try {
-    const tag = core.getInput('tag') || (github.context.ref).replace('refs/tags/', '');
+    const tag = core.getInput('tag') || process.env.VERSION || (github.context.ref).replace('refs/tags/', '');
     console.log(`Using tag: "${tag}"`);
     const prefix = core.getInput('prefix') || "";
     let major_tag = prefix + semver.major(tag);
