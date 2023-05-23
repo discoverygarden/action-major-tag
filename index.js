@@ -21,7 +21,9 @@ async function checkIfTagExists(major_tag) {
   const octokit = github.getOctokit(token);
   const owner = github.context.payload.repository.organization;
   const repo = github.context.payload.repository.name;
-  const ref = `tags/${major_tag}`;
+  const ref = `refs/tags/${major_tag}`;
+
+  core.debug(`Owner: ${owner} - Repo: ${repo} - REF: ${ref}`);
 
   try {
     await octokit.git.getRef({
