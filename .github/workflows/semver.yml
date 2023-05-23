@@ -14,3 +14,5 @@ jobs:
         uses: discoverygarden/auto-semver@v1
       - name: Update Major Tag
         uses: discoverygarden/action-major-tag@main
+        with:
+          prefix: 'v'
