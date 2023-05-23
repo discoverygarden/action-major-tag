@@ -1,10 +1,9 @@
 ---
 name: Check Dist
 on:
-  pull_request:
-    branches: ['*']
-  push:
-    branches: ['main']
+  pull_request_target:
+    branches:
+      - main
 jobs:
   cehck-dist:
     runs-on: ubuntu-latest
