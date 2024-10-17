@@ -25,7 +25,7 @@ outputs:
   origin_tag:
     description: 'The origin tag discovered and used by the workflow to make the major tag.'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
 branding:
   icon: 'tag'
