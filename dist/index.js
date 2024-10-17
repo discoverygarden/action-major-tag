@@ -34369,7 +34369,7 @@ async function createTag(major_tag) {
   const octokit = github.getOctokit(token);
   const sha = core.getInput('sha') || github.context.sha;
   const ref = `refs/tags/${major_tag}`;
-  await octokit.git.createRef({
+  await octokit.rest.git.createRef({
     ...github.context.repo,
     ref,
     sha
@@ -34388,7 +34388,7 @@ async function checkIfTagExists(major_tag) {
   core.debug(`Owner: ${owner} - Repo: ${repo} - REF: ${ref}`);
 
   try {
-    await octokit.git.getRef({
+    await octokit.rest.git.getRef({
       owner,
       repo,
       ref,
@@ -34396,7 +34396,7 @@ async function checkIfTagExists(major_tag) {
 
     try {
       console.log(`Ref "${ref}" already exists. Removing to replace.`);
-      await octokit.git.deleteRef({
+      await octokit.rest.git.deleteRef({
         owner,
         repo,
         ref,
